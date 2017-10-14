@@ -2,12 +2,12 @@ Photo.destroy_all
 Song.destroy_all
 Artist.destroy_all
 
+white_stripes = Artist.create!(name: "The White Stripes")
 talking_heads = Artist.create!(name: "Talking Heads")
+stone_roses = Artist.create!(name: "The Stone Roses")
+the_smiths = Artist.create!(name: "The Smiths")
 rodriguez = Artist.create!(name: "Rodriguez")
 nick_cave = Artist.create!(name: "Nick Cave & The Bad Seeds")
-the_smiths = Artist.create!(name: "The Smiths")
-stone_roses = Artist.create!(name: "The Stone Roses")
-white_stripes = Artist.create!(name: "The White Stripes")
 
 
 Song.create!(name: "Psycho Killer",
@@ -40,6 +40,15 @@ Song.create!(name: "Henry Lee",
 Song.create!(name: "This Charming Man",
   link: "https://www.youtube.com/watch?v=cJRP3LRcUFg&list=PLze5jhu6M0TV09Sxy-NWAjjlEkuPgDeeD",
   artist: the_smiths)
+Song.create!(name: "Seven Nation Army",
+  link: "https://www.youtube.com/watch?v=0J2QdDbelmY",
+  artist: white_stripes)
+Song.create!(name: "Blue Orchid",
+  link: "https://www.youtube.com/watch?v=jW8UlrtcEac&list=PLGiKkijd1_aPL5BMGt-ITp93oIP7mqIgP",
+  artist: white_stripes)
+Song.create!(name: "Love Spreads",
+    link: "https://www.youtube.com/watch?v=ct-qa6SjRZo&list=PLJziKgkV9M2wgIADFTCPP-848QM4CVLTi",
+    artist: stone_roses)
 
 Photo.create!(remote_image_url: "http://res.cloudinary.com/mdfchucknorris/image/upload/v1507969169/Talking_Heads_band1_snixoo.jpg",
   artist: talking_heads)
