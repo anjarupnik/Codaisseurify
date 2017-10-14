@@ -2,7 +2,7 @@
   <% @artists.each do |artist| %>
      <article class="card">
         <div class="img">
-          <%= image_tag artist.photo.image %>
+          <%= image_tag artist.photo.image.thumbnail %>
         </div>
       <h2 style = "text-decoration: underline;"><%= link_to artist.name, artist %></h2>
       </article>

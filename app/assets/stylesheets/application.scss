@@ -1,2 +1,21 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.card {
+  color: white;
+  background-color: #85c6b5;
+  width: calc(100%/3 - 40px);
+  padding: 20px;
+  border-radius: 4px;
+  margin: 20px;
+}
+
+.img {
+  height: 150px;
+  overflow: hidden;
+}
+.gallery {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
