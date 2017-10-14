@@ -3,18 +3,13 @@
 <nav class="navbar navbar-default navbar-static-top">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a style="font-family: 'Pacifico', cursive, serif; font-size: 40px; color: #00CED1;"
+      <a style="font-family: 'Pacifico', cursive, serif; font-size: 60px; color: #00CED1; margin-top: 20px;"
         <%= link_to "Codaisseuruify", root_path, class: "navbar-brand" %></a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li>  <%= link_to "Sort by name", artists_path(sort: "name") %></li>
+      <ul class="nav navbar-nav navbar-right" style = "padding-top: 40px; margin-right: -50px;">
+        <li class = "btn btn-defult" style="font-size: 30px; text-decoration: underline; padding-bottom: 0;">
+            <%= link_to "Sort by name", artists_path(sort: "name") %></li>
       </ul>
     </div>
   </div>

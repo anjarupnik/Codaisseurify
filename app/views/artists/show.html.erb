@@ -1,24 +1,35 @@
+<style>
+ h4, li {
+   color: black;
+ }
+</style>
+
+
+
 <div class="panel panel-info">
   <div class="panel-heading">
     <div class="img">
       <%= image_tag @artist.photo.image.thumbnail %>
     </div>
-    <h4><%= @artist.name %></h4></div>
+
+    <h4 style = "text-decoration: underline;"><%= @artist.name %></h4>
 
   <div class="panel-body">
     <ol>
       <% @songs.each do |song| %>
       <li><%= song.name %></li>
-      <p><%= link_to "Play", song.link, target: :_blank %></p>
+      <p><%= link_to "Play", song.link, target: :_blank %>
       <%= link_to "Delete", [song.artist, song],
-        method: :delete, data: { confirm: "Are you sure?"}  %>
+        method: :delete, data: { confirm: "Are you sure?"}  %></p>
       <% end %>
     </ol>
+    <p><%= link_to "Add song", new_artist_song_path(@artist), class: "btn btn-info" %>
+      <%= link_to "Delete artist", artist_path(@artist.id),
+    method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-info" %></p>
+  </div>
+  </div>
 
-  </div>
-  </div>
-  <p><%= link_to "Add song", new_artist_song_path(@artist), class: "btn btn-info" %></p>
-  <p><%= link_to "Delete artist", artist_path(@artist.id),
-  method: :delete, data: { confirm: "Are you sure?"} %></p>
 </div>
-<%= link_to "Back", artists_path, class: "btn btn-default" %>
+
+
+<%= link_to "Back", artists_path, class: "btn btn-default btn-lg" %>
