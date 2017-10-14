@@ -1,0 +1,19 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <div class="img">
+      <%= image_tag @artist.photo.image.thumbnail %>
+    </div>
+    <h4><%= @artist.name %></h4></div>
+
+  <div class="panel-body">
+    <ol>
+      <% @songs.each do |song| %>
+      <li><%= song.name %></li>
+      <p><%= link_to "Play", song.link, target: :_blank %></p>
+      <% end %>
+    </ol>
+
+  </div>
+  </div>
+</div>
+<%= link_to "Back", artists_path, class: "btn btn-default" %>
