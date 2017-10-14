@@ -1,7 +1,12 @@
 class ArtistsController < ApplicationController
 
   def index
-    @artists = Artist.all
+    if params[:sort].present?
+      @artists = Artist.all.sort_by_name
+    else
+      @artists = Artist.all
+    end
+
   end
 
   def show
@@ -16,5 +21,6 @@ class ArtistsController < ApplicationController
     redirect_to artists_path, notice: "Artist removed"
 
   end
+
 
 end

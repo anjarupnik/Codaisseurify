@@ -6,4 +6,7 @@ class Artist < ApplicationRecord
   validates :name, presence: true
   validates :name, uniqueness: true
 
+  def self.sort_by_name
+    order :name
+  end
 end
