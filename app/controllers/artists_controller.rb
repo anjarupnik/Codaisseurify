@@ -8,5 +8,14 @@ class ArtistsController < ApplicationController
     @artist = Artist.find(params[:id])
     @songs = @artist.songs.all
   end
-  
+
+  def destroy
+    @artist = Artist.find(params[:id])
+    @artist.destroy
+
+    redirect_to artists_path, notice: "Artist removed"
+
+  end
+
+
 end
