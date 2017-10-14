@@ -8,4 +8,12 @@ RSpec.describe Song, type: :model do
     it { is_expected.to validate_uniqueness_of(:name) }
     it { is_expected.to validate_length_of(:name).is_at_most(20) }
   end
+
+  describe "association with artist" do
+    let(:artist) { create :artist }
+
+    it { is_expected.to belong_to :artist}
+
+  end
+
 end
