@@ -10,6 +10,8 @@
       <% @songs.each do |song| %>
       <li><%= song.name %></li>
       <p><%= link_to "Play", song.link, target: :_blank %></p>
+      <%= link_to "Delete", [song.artist, song], 
+      method: :delete, data: { confirm: "Are you sure?"}  %>
       <% end %>
     </ol>
 

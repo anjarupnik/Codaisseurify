@@ -16,6 +16,17 @@ before_action :set_artist
     end
   end
 
+  def destroy
+    song = Song.find(params[:id])
+    @artist = song.artist
+    song.destroy
+
+    redirect_to artist_path(@artist), notice: "Song deleted"
+
+end
+
+
+
   private
 
     def song_params
