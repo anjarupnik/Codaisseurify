@@ -1,0 +1,13 @@
+<section class="gallery">
+  <% @artists.each do |artist| %>
+     <article class="card">
+        <div class="img">
+          <%= image_tag artist.photo.image %>
+        </div>
+      <h2 style = "text-decoration: underline;"><%= link_to artist.name, artist %></h2>
+      </article>
+   <% end %>
+</section>
+
+
+<div style="height: 30px;"> </div>
