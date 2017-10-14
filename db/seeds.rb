@@ -1,3 +1,4 @@
+Photo.destroy_all
 Song.destroy_all
 Artist.destroy_all
 
@@ -39,3 +40,16 @@ Song.create!(name: "Henry Lee",
 Song.create!(name: "This Charming Man",
   link: "https://www.youtube.com/watch?v=cJRP3LRcUFg&list=PLze5jhu6M0TV09Sxy-NWAjjlEkuPgDeeD",
   artist: the_smiths)
+
+Photo.create!(remote_image_url: "http://res.cloudinary.com/mdfchucknorris/image/upload/v1507969169/Talking_Heads_band1_snixoo.jpg",
+  artist: talking_heads)
+Photo.create!(remote_image_url: "http://res.cloudinary.com/mdfchucknorris/image/upload/v1507969164/ssr1_hgc5xb.jpg",
+  artist: rodriguez)
+Photo.create!(remote_image_url: "http://res.cloudinary.com/mdfchucknorris/image/upload/v1507969194/A-36665-1146915041.jpeg_ctrnbh.jpg",
+  artist: nick_cave)
+Photo.create!(remote_image_url: "http://res.cloudinary.com/mdfchucknorris/image/upload/v1507969180/The_Smiths_-_web_versionanPxcI_6_vozyqt.jpg",
+  artist: the_smiths)
+Photo.create!(remote_image_url: "http://res.cloudinary.com/mdfchucknorris/image/upload/v1507969147/600x600bf_c0atel.jpg",
+  artist: stone_roses)
+Photo.create!(remote_image_url: "http://res.cloudinary.com/mdfchucknorris/image/upload/v1507969152/9205c3feec28a35a1dff8d0511dc99b9--the-white-stripes-music-and-art_ehcmni.jpg",
+  artist: white_stripes)
