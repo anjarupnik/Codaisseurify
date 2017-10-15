@@ -6,7 +6,6 @@ class ArtistsController < ApplicationController
     else
       @artists = Artist.all
     end
-
   end
 
   def show
@@ -19,8 +18,6 @@ class ArtistsController < ApplicationController
     @artist.destroy
 
     redirect_to artists_path, notice: "Artist removed"
-
   end
-
 
 end

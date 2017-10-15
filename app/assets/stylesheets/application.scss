@@ -9,6 +9,11 @@
   padding: 20px;
   border-radius: 20px;
   margin: 20px;
+    h2 {
+      a {
+        color: white;
+        }
+       }
 }
 
 .img {
@@ -17,6 +22,7 @@
   padding-left: 20px;
   padding-top: 10px;
 }
+
 .gallery {
   flex: 1;
   display: flex;
@@ -30,4 +36,21 @@
 
 h4 {
   padding-left: 20px;
+}
+
+.dropdown {
+  margin-left: 550px;
+    a {
+      color: 	#00BFFF;
+      font-size: 15px;
+      }
+}
+
+.panel-heading {
+  h4, li {
+    color: black;
+  }
+  h4 {
+    text-decoration: underline;
+  }
 }

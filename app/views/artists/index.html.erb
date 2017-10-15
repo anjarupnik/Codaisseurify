@@ -1,3 +1,14 @@
+<div class="dropdown show">
+  <a class="btn btn-default dropdown-toggle"  id="dropdownMenuLink" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false">
+    Sort Artists
+  </a>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" >  <%= link_to "Sort by name", artists_path(sort: "name") %></a>
+  </div>
+</div>
+
 <section class="gallery">
   <% @artists.each do |artist| %>
      <article class="card">
@@ -8,10 +19,6 @@
       </article>
    <% end %>
 </section>
-
-
-
-
 
 
 <div style="height: 30px;"> </div>
