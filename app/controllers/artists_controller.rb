@@ -1,11 +1,11 @@
 class ArtistsController < ApplicationController
 
   def index
-    if params[:sort].present?
-      @artists = Artist.all.sort_by_name
-    else
+    return @artists = Artist.all.sort_name_asc if params[:sort].present? && params[:sort] == "name_asc"
+    return @artists = Artist.all.sort_name_desc if params[:sort].present? && params[:sort] == "name_desc"
+
       @artists = Artist.all
-    end
+
   end
 
   def show

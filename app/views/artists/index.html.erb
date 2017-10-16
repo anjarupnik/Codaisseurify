@@ -4,9 +4,10 @@
     Sort Artists
   </a>
 
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item" >  <%= link_to "Sort by name", artists_path(sort: "name") %></a>
-  </div>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <li><a class="dropdown-item" >  <%= link_to "Sort by name A-Z", artists_path(sort: "name_asc") %></a></li>
+    <li><a class="dropdown-item" >  <%= link_to "Sort by name Z-A", artists_path(sort: "name_desc") %></a></li>
+  </ul>
 </div>
 
 <section class="gallery">
