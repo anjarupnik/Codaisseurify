@@ -6,11 +6,8 @@ class Artist < ApplicationRecord
   validates :name, presence: true
   validates :name, uniqueness: true
 
-  def self.sort_name_asc
-    order(name: :asc)
-  end
-
-  def self.sort_name_desc
-    order(name: :desc)
-  end
+  scope :sort_name_asc, -> {order(name: :asc)}
+  scope :sort_name_desc, -> {order(name: :desc)}
+  scope :sort_date_asc, -> {order(created_at: :asc)}
+  scope :sort_date_desc, -> {order(created_at: :desc)}
 end

@@ -1,10 +1,14 @@
 class ArtistsController < ApplicationController
 
   def index
-    return @artists = Artist.all.sort_name_asc if params[:sort].present? && params[:sort] == "name_asc"
-    return @artists = Artist.all.sort_name_desc if params[:sort].present? && params[:sort] == "name_desc"
+    if params[:sort].present?
+      return @artists = Artist.all.sort_name_asc if params[:sort] == "name_asc"
+      return @artists = Artist.all.sort_name_desc if params[:sort] == "name_desc"
+      return @artists = Artist.all.sort_date_asc if params[:sort] == "date_asc"
+      return @artists = Artist.all.sort_date_desc if params[:sort] == "date_desc"
+    end
 
-      @artists = Artist.all
+    @artists = Artist.all
 
   end
 
