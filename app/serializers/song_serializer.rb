@@ -1,5 +1,5 @@
 class SongSerializer < ActiveModel::Serializer
-  attributes :name, :link
+  attributes :name, :link, :id
 
 
   belongs_to :artist

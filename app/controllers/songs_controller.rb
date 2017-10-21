@@ -2,6 +2,9 @@ class SongsController < ApplicationController
 
 before_action :set_artist
 
+def index
+end
+
   def new
     @song = @artist.songs.build
   end
@@ -9,12 +12,12 @@ before_action :set_artist
   def create
     @song = @artist.songs.create(song_params)
 
-    if @song.save
-      redirect_to @artist
-    else
-      render "new"
-    end
-  end
+    respond_to do |format|
+         format.html { redirect_to @artist }
+         format.js
+         format.json {render json: @song}
+      end
+     end
 
   def destroy
     song = Song.find(params[:id])

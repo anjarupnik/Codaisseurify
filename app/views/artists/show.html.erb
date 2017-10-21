@@ -5,16 +5,17 @@
     </div>
 
     <h4><%= @artist.name %></h4>
-     <%= link_to "Delete artist", artist_path(@artist.id),
-    method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-info" %>
+    <a> <%= link_to "Delete artist", artist_path(@artist.id),
+    method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-info", id:"deleteart" %></a>
 
   <div class="panel-body">
-    <ol>
+    <ol id="songslist">
       <% @songs.each do |song| %>
-      <li><%= song.name %></li>
-      <p><%= link_to "Play", song.link, target: :_blank %>
+      <li><%= song.name %>
+      </br>
+      <%= link_to "Play", song.link, target: :_blank %>
       <%= link_to "Delete", [song.artist, song],
-        method: :delete, data: { confirm: "Are you sure?"}  %></p>
+        method: :delete, data: { confirm: "Are you sure?"}  %></li>
       <% end %>
     </ol>
   </div>

@@ -25,4 +25,5 @@ class ArtistsController < ApplicationController
     redirect_to artists_path, notice: "Artist removed"
   end
 
+
 end

@@ -4,6 +4,6 @@ class Song < ApplicationRecord
 
   validates :name, presence: true
   validates :name, uniqueness: true
-  validates :name, length: { maximum: 20 }, allow_blank: true
+  validates :name, length: { maximum: 30 }, allow_blank: true
 
 end
