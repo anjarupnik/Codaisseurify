@@ -44,6 +44,7 @@ function submitSong(event) {
   createSong(($("#song_name").val()), ($("#song_link").val()));
   $("#song_name").val(null);
   $("#song_link").val(null);
+  $("input[submit]").val(null);
 }
 
 $(document).ready(function() {
