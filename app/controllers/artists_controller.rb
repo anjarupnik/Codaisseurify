@@ -14,7 +14,7 @@ class ArtistsController < ApplicationController
 
   def show
     @artist = Artist.find(params[:id])
-    @songs = @artist.songs.all
+    @songs = @artist.songs.all.sort_by_date
     @song = @artist.songs.new
   end
 
