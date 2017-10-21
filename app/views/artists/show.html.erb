@@ -5,6 +5,8 @@
     </div>
 
     <h4><%= @artist.name %></h4>
+     <%= link_to "Delete artist", artist_path(@artist.id),
+    method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-info" %>
 
   <div class="panel-body">
     <ol>
@@ -15,11 +17,10 @@
         method: :delete, data: { confirm: "Are you sure?"}  %></p>
       <% end %>
     </ol>
-    <p><%= link_to "Add song", new_artist_song_path(@artist), class: "btn btn-info" %>
-      <%= link_to "Delete artist", artist_path(@artist.id),
-    method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-info" %></p>
   </div>
   </div>
+
+  <%= render "songs/form" %>
 
 </div>
 
