@@ -1,6 +1,5 @@
 FactoryGirl.define do
   factory :photo do
-    event nil
-    image "MyString"
+    image  { Faker::Name.name }
   end
 end
