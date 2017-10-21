@@ -13,11 +13,16 @@ end
     @song = @artist.songs.create(song_params)
 
     respond_to do |format|
+      if @song.save
          format.html { redirect_to @artist }
          format.js
          format.json {render json: @song}
-      end
-     end
+       else
+        format.html { redirect_to @artist}
+        format.json { render json: @song.errors, status: :unprocessable_entity }
+       end
+    end
+  end
 
   def destroy
     song = Song.find(params[:id])

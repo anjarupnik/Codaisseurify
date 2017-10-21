@@ -36,7 +36,27 @@ function createSong(name, link) {
 
         $("#songslist").append(listItem);
 
-      });
+      })
+
+      .fail(function(error) {
+        console.log(error);
+        error_message = error.responseJSON.name[0];
+        showError(error_message);
+});
+}
+
+function showError(message) {
+  $("#song_name").addClass("error");
+  var errorElement = $("<small></small>")
+    .attr("id", "error_message")
+    .addClass("error")
+    .html("name " + message);
+  $(errorElement).appendTo('form');
+}
+
+function resetErrors() {
+  $("#error_message").remove();
+  $("#song_name").removeClass("error");
 }
 
 function submitSong(event) {
@@ -44,7 +64,7 @@ function submitSong(event) {
   createSong(($("#song_name").val()), ($("#song_link").val()));
   $("#song_name").val(null);
   $("#song_link").val(null);
-  $("input[submit]").val(null);
+  resetErrors();
 }
 
 $(document).ready(function() {
