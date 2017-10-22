@@ -65,7 +65,7 @@ function submitSong(event) {
   resetErrors();
 }
 
-function deleteSong() {
+$(document).on('click', "a#deletesong", function(){
 
   var id = $("#deleteart").attr('href');
   var button = this
@@ -79,9 +79,9 @@ function deleteSong() {
 
       $(button).parent().remove();
     }
-}
+});
 
 $(document).ready(function() {
   $("form#new_song").bind('submit', submitSong);
-  $("a#deletesong").bind('click', deleteSong);
+
 });
