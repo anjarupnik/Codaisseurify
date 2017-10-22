@@ -10,11 +10,9 @@ feature 'Manage adding songs', js: true do
 
    visit artist_path(artist)
 
-   fill_in 'song_name', with: 'Apokalipso'
+     fill_in 'song_name', with: 'Apokalipso'
 
-
-    page.execute_script("$('form').submit()")
-
+     page.execute_script("$('form').submit()")
 
      expect(page).to have_content('Apokalipso')
   end

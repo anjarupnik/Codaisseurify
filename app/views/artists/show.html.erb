@@ -11,11 +11,11 @@
   <div class="panel-body">
     <ol id="songslist">
       <% @songs.each do |song| %>
-      <li><%= song.name %>
+      <li id = "<%= song.id %>"><%= song.name %>
       </br>
       <%= link_to "Play", song.link, target: :_blank %>
-      <%= link_to "Delete", [song.artist, song],
-        method: :delete, data: { confirm: "Are you sure?"}  %></li>
+      <a id= "deletesong" >  Delete</a>
+  </li>
       <% end %>
     </ol>
   </div>

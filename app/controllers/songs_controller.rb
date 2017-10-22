@@ -29,9 +29,13 @@ end
     @artist = song.artist
     song.destroy
 
-    redirect_to artist_path(@artist), notice: "Song deleted"
+    respond_to do |format|
+      format.html { redirect_to @artist }
+      format.json { head :no_content }
+      format.js 
+    end
 
-end
+   end
 
 
 
