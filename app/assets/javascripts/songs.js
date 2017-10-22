@@ -65,25 +65,23 @@ function submitSong(event) {
   resetErrors();
 }
 
-$(document).ready(function() {
-  var id = $("#deleteart").attr('href');
+function deleteSong() {
 
-  $("#deletesong").on('click', function() {
-    var songid = $("#deletesong").parent().attr('id');
+  var id = $("#deleteart").attr('href');
+  var button = this
+  var songid = $(button).parent().attr('id');
   if(confirm("Are you sure?")){
     $.ajax({
       type: "DELETE",
       url: id + "/songs/" + songid + ".json",
       contentType: "application/json",
       dataType: "json"})
-      .done(function(data) {
-        console.log(data);
-        $("#deletesong").parent().remove();
-      });
+
+      $(button).parent().remove();
+    }
 }
-});
-});
 
 $(document).ready(function() {
   $("form#new_song").bind('submit', submitSong);
+  $("a#deletesong").bind('click', deleteSong);
 });
