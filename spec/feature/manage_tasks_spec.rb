@@ -4,6 +4,7 @@ feature 'Manage adding songs', js: true do
 
   let!(:artist) {create :artist, name: "Rundek"}
   let!(:song) {create :song, artist: artist, name: "Makedo"}
+  let!(:song) {create :song, artist: artist, name: "Ruke"}
   let!(:photo) {create :photo, artist: artist}
 
   scenario 'add a new song' do
@@ -23,8 +24,17 @@ feature 'Manage adding songs', js: true do
 
    page.accept_confirm do
        click_link 'Delete'
+   end
+
+     expect(page).not_to have_content('Makedo')
   end
 
-     expect(page).not_to have_content('Apokalipso')
+  scenario 'delete all song' do
+
+   visit artist_path(artist)
+
+       click_link 'Delete All Songs'
+
+     expect(page).not_to have_content('Apokalipso', 'Makedo', 'Ruke')
   end
 end
