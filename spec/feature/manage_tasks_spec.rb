@@ -16,4 +16,15 @@ feature 'Manage adding songs', js: true do
 
      expect(page).to have_content('Apokalipso')
   end
+
+  scenario 'delete song' do
+
+   visit artist_path(artist)
+
+   page.accept_confirm do
+       click_link 'Delete'
+  end
+
+     expect(page).not_to have_content('Apokalipso')
+  end
 end
