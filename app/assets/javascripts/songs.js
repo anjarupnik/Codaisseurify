@@ -25,6 +25,7 @@ function createSong(name, link) {
         play.html("Play");
 
         var del = $('<a></a>');
+        del.attr('href', '#');
         del.attr('id', 'deletesong')
         del.html("   Delete");
 
@@ -68,7 +69,7 @@ function submitSong(event) {
 $(document).on('click', "a#deletesong", function(){
 
   var id = $("#deleteart").attr('href');
-  var button = this
+  var button = this;
   var songid = $(button).parent().attr('id');
   if(confirm("Are you sure?")){
     $.ajax({
@@ -81,7 +82,25 @@ $(document).on('click', "a#deletesong", function(){
     }
 });
 
+function deleteSongs(event) {
+  event.preventDefault();
+  $.each($("a#deletesong"), function(){
+  var id = $("#deleteart").attr('href');
+  var button = this;
+  var songid = $(button).parent().attr('id');
+
+    $.ajax({
+      type: "DELETE",
+      url: id + "/songs/" + songid + ".json",
+      contentType: "application/json",
+      dataType: "json"})
+
+      $(button).parent().remove();
+});
+
+}
+
 $(document).ready(function() {
   $("form#new_song").bind('submit', submitSong);
-
+  $("#deleteallsongs").bind('click', deleteSongs);
 });
