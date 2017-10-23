@@ -82,25 +82,24 @@ $(document).on('click', "a#deletesong", function(){
     }
 });
 
-function deleteSongs(event) {
-  event.preventDefault();
-  $.each($("a#deletesong"), function(){
+
+$(document).on('click', "a#deleteallsongs", function(){
+
+  $.each($("li"), function(){
   var id = $("#deleteart").attr('href');
-  var button = this;
-  var songid = $(button).parent().attr('id');
+  var songid = $(this).attr('id');
 
     $.ajax({
       type: "DELETE",
       url: id + "/songs/" + songid + ".json",
       contentType: "application/json",
       dataType: "json"})
+      $(this).remove();
 
-      $(button).parent().remove();
 });
 
-}
+});
 
 $(document).ready(function() {
   $("form#new_song").bind('submit', submitSong);
-  $("#deleteallsongs").bind('click', deleteSongs);
 });

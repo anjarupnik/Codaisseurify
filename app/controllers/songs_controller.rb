@@ -1,9 +1,9 @@
 class SongsController < ApplicationController
 
-before_action :set_artist
+  before_action :set_artist
 
-def index
-end
+  def index
+  end
 
   def new
     @song = @artist.songs.build
@@ -15,8 +15,7 @@ end
     respond_to do |format|
       if @song.save
          format.html { redirect_to @artist }
-         format.js
-         format.json {render json: @song}
+         format.json { render json: @song}
        else
         format.html { redirect_to @artist}
         format.json { render json: @song.errors, status: :unprocessable_entity }
@@ -32,9 +31,7 @@ end
     respond_to do |format|
       format.html { redirect_to @artist }
       format.json { head :no_content }
-      format.js 
     end
-
    end
 
 
