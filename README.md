@@ -9,6 +9,6 @@ App for managing a collection of songs and their associated artists.
  alt="artist's page" />
 </p>
 
- ## Chek it out
+ ## Check it out
 
 [https://codaisseurify-12.herokuapp.com/](https://codaisseurify-12.herokuapp.com/)
