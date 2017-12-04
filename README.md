@@ -9,6 +9,4 @@ App for managing a collection of songs and their associated artists.
 
  ## Chek it out
 
- ```bash
 [https://codaisseurify-12.herokuapp.com/](https://codaisseurify-12.herokuapp.com/)
- ```
