@@ -1,24 +1,14 @@
-# README
+# Codaisseurify
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+App for managing a collection of songs and their associated artists.
 
-Things you may want to cover:
+ <img src="http://res.cloudinary.com/mdfchucknorris/image/upload/v1512379575/Screenshot_from_2017-12-04_10-20-27_xd0kjc.png"
+ alt="artist menu" width="400" height="280" border="10"/>
+ <img src="http://res.cloudinary.com/mdfchucknorris/image/upload/v1512379569/Screenshot_from_2017-12-04_10-20-39_vyp2ao.png"
+ alt="artist's page" width="400" height="280" border="10" />
 
-* Ruby version
+ ## Chek it out
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ ```bash
+<a href"https://codaisseurify-12.herokuapp.com/">https://codaisseurify-12.herokuapp.com/</a>
+ ```

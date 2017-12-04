@@ -97,7 +97,6 @@ $(document).on('click', "a#deleteallsongs", function(){
       $(this).remove();
 
 });
-
 });
 
 $(document).ready(function() {
